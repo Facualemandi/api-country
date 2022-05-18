@@ -1,9 +1,11 @@
 import React from "react";
-import '../CountryDetails/CountryDetails.css'
+import { NavLink } from "react-router-dom";
+import './CountryDetails.css'
 
-const CountryDetails = ({  name, img, capital, population, region }) => {
+const CountryDetails = ({  name, img, capital, population, region , code}) => {
   return (
     <>
+    <NavLink to={`/country/${code}`}>
      <main className="main">
            <section className="main_section1">
                <img alt={name} src={img} className='img'/>
@@ -16,6 +18,7 @@ const CountryDetails = ({  name, img, capital, population, region }) => {
               <p> Region: <b>{region}</b> </p>
            </section>
      </main>
+    </NavLink>
     </>
   );
 };
