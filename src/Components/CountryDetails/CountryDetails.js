@@ -2,10 +2,10 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import './CountryDetails.css'
 
-const CountryDetails = ({  name, img, capital, population, region , code}) => {
+const CountryDetails = ({  name, img, capital, population, region }) => {
   return (
     <>
-    <NavLink to={`/country/${code}`}>
+    <NavLink to={`/country/${name}`} className='nav_link_decoration'>
      <main className="main">
            <section className="main_section1">
                <img alt={name} src={img} className='img'/>
@@ -23,4 +23,4 @@ const CountryDetails = ({  name, img, capital, population, region , code}) => {
   );
 };
 
-export default CountryDetails;
+export {CountryDetails};

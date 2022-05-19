@@ -13,7 +13,6 @@ export const useAllCountry = () => {
       const [allCountry] = await Promise.all([helpHttp().get(urlApi)]);
       setCountry(allCountry);
       setLoading(false);
-      console.log(allCountry);
     };
     isFetch();
   }, []);
