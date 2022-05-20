@@ -8,7 +8,7 @@ const CountryItem = ({ changeBorderCountry }) => {
   const { country, loading } = useItem();
   const value = Object.values(country);
 
-let name = value[0]
+
 console.log(country)
 console.log(country.name)
   return (

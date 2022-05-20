@@ -1,0 +1,12 @@
+.seaction_input {
+  width: 85vmax;
+  margin: auto;
+  margin-top: 5vh;
+}
+
+.seaction_input input {
+  width: 50vh;
+  height: 40px;
+  border: none;
+  border: 1px solid rgb(202, 202, 202);
+}
