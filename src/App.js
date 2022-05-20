@@ -9,6 +9,11 @@ function App() {
         nav(`country/${el}`)
   };
 
+  let  ret = useNavigate()
+  const toReturn = () => {
+        ret('/')
+  }
+
   return (
     <div className="App">
       <Routes>
@@ -16,7 +21,7 @@ function App() {
 
         <Route
           path="/country/:code"
-          element={<CountryItem changeBorderCountry={changeBorderCountry} />}
+          element={<CountryItem changeBorderCountry={changeBorderCountry} toReturn={toReturn}/>}
         />
       </Routes>
     </div>

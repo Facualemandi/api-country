@@ -80,7 +80,7 @@
       height: 100vh;
     }
   
-    .asd{
+    .details_container_item{
       display: flex
   
     }
@@ -89,7 +89,7 @@
       width: 70vh;
       height: 40vh;
     }
-    .asdds{
+    .container_total_item{
       display: flex;
       box-shadow: 1px 1px 3px 1px rgb(203, 203, 203);
       margin: auto;

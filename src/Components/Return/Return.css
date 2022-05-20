@@ -1,0 +1,31 @@
+.container_return{
+    width: 30vh;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+
+
+}
+
+.btn_return{
+    padding: 1vh;
+    width: 25vh;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px 1px rgb(201, 201, 201);
+    font-family: sans-serif;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.icon_return{
+    margin-left: 5px;
+    width: 20px;
+    height: 20px;
+}

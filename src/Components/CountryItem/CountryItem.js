@@ -4,8 +4,9 @@ import "./CountryItem.css";
 import CountryBorders from "./CountryBorders";
 import Loaders from "../../Loader/Loaders";
 import { useDarkMode } from "../../Hooks/useDarkMode";
+import Return from "../Return/Return";
 
-const CountryItem = ({ changeBorderCountry }) => {
+const CountryItem = ({ changeBorderCountry, toReturn }) => {
   const { country, loading } = useItem();
 
   const {darkMode} = useDarkMode()
@@ -20,13 +21,14 @@ console.log(country.name)
 
       {!loading && (
         <section className={`item ${darkMode && 'item-darkmode'}`}>
-          <section className="asdds">
+          <section className="container_total_item">
+
             <section className=" container_img">
               <img className=" item_img" src={country.flag} alt={country.name} />
             </section>
 
             <div>
-              <div className="asd">
+              <div className="details_container_item">
                 <section className="section_item_one">
                   <h1 className=" item_h1">{country.name}</h1>
 
@@ -99,8 +101,10 @@ console.log(country.name)
                   </p>
                 )}
               </section>
+
             </div>
           </section>
+           <Return toReturn={toReturn}/>
         </section>
       )}
     </>
