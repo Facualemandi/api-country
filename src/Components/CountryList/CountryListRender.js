@@ -4,25 +4,13 @@ import CountryList from "./CountryList";
 import { CountryDetails } from "../CountryDetails/CountryDetails";
 import { useAllCountry } from "../../Hooks/useAllCountry";
 import CountrySearch from "../CountrySearch.js/CountrySearch";
+import { useSearch } from "../../Hooks/useSearch";
 
 const CountryListRender = () => {
   const { country, loading } = useAllCountry();
+  const {searchCountry, setSearchCountry, totalSearch, handleChange} = useSearch()
 
-  const [searchCountry, setSearchCountry] = useState("");
 
-  const handleChange = (e) => {
-    setSearchCountry(e.target.value);
-  };
-
-  let totalSearch = [];
-
-  if (searchCountry.length < 1) {
-    totalSearch = country;
-  } else {
-      totalSearch = country.filter((el) => 
-      el.name.toLowerCase().includes(searchCountry.toLocaleLowerCase())
-    );
-  }
 
   return (
     <>

@@ -8,7 +8,6 @@ function App() {
 
   const changeBorderCountry = (el) => {
         nav(`country/${el}`)
-
   };
 
   return (

@@ -1,8 +1,7 @@
 .section_country{
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    width: 90vmax;
-    margin: auto;
+
 }
 
 @media (min-width:600px){
@@ -15,12 +14,16 @@
     .section_country{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        width: 90vmax;
+        margin: auto;
     }
 }
 @media (min-width:1300px){
     .section_country{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+        width: 90vmax;
+        margin: auto;
     }
 }
 @media (min-width:1600px){
