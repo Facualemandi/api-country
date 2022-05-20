@@ -3,10 +3,13 @@ import { useItem } from "../../Hooks/useItem";
 import "./CountryItem.css";
 import CountryBorders from "./CountryBorders";
 import Loaders from "../../Loader/Loaders";
+import { useDarkMode } from "../../Hooks/useDarkMode";
 
 const CountryItem = ({ changeBorderCountry }) => {
   const { country, loading } = useItem();
-  const value = Object.values(country);
+
+  const {darkMode} = useDarkMode()
+  
 
 
 console.log(country)
@@ -16,7 +19,7 @@ console.log(country.name)
       {loading && <Loaders />}
 
       {!loading && (
-        <section className="item">
+        <section className={`item ${darkMode && 'item-darkmode'}`}>
           <section className="asdds">
             <section className=" container_img">
               <img className=" item_img" src={country.flag} alt={country.name} />

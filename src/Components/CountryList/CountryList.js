@@ -1,10 +1,10 @@
 import React from 'react'
 import '../CountryList/CountryList.css'
 
-const CountryList = (props) => {
+const CountryList = ({children}) => {
   return (
-     <section className='section_country'>
-      {props.children}
+     <section className={`section_country`}>
+      {children}
      </section>
   )
 }

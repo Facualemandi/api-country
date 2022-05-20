@@ -5,7 +5,10 @@
   width: 85%;
   margin: auto;
   margin-top: 3vh;
-  box-shadow: 1px 1px 3px 1px rgb(220, 220, 220);
+  box-shadow: 1px 1px 3px 1px rgb(185, 185, 185);
+  background-color: rgb(255, 255, 255);
+  transition: 0.5s;
+
 }
 
 .img {
@@ -42,7 +45,9 @@
 }
 
 .main-darkmode{
-  background-color: #697477;
+  background-color: #233846;
+  transition: 0.5s;
+  box-shadow: 1px 1px 3px 1px rgb(70, 93, 120);
 }
 
 .main_section2-darkmode p {

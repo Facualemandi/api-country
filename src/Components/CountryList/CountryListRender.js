@@ -6,21 +6,15 @@ import { useAllCountry } from "../../Hooks/useAllCountry";
 import CountrySearch from "../CountrySearch.js/CountrySearch";
 import { useSearch } from "../../Hooks/useSearch";
 import DarkMode from "../DarkMode/DarkMode";
+import { useDarkMode } from "../../Hooks/useDarkMode";
 
 const CountryListRender = () => {
-  const { loading } = useAllCountry();
-  const { searchCountry, setSearchCountry, totalSearch, handleChange } =
-    useSearch();
 
-  const [darkMode, setDarkMode] = useState(false);
+   const { loading } = useAllCountry();
+   const { searchCountry, setSearchCountry, totalSearch, handleChange } = useSearch();
+   const {darkMode, changeMode} = useDarkMode()
 
-  const changeMode = () => {
-    if (!darkMode) {
-      setDarkMode(true);
-    } else {
-      setDarkMode(false);
-    }
-  };
+
 
   return (
     <>
