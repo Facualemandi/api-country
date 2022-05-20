@@ -40,3 +40,11 @@
   text-decoration: none;
   color: black;
 }
+
+.main-darkmode{
+  background-color: #697477;
+}
+
+.main_section2-darkmode p {
+  color: rgb(0, 0, 0);
+}

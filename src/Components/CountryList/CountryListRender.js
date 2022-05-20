@@ -47,6 +47,7 @@ const CountryListRender = () => {
                 population={el.population}
                 region={el.region}
                 code={el.alpha3Code}
+                darkMode={darkMode}
               />
             ))}
           </CountryList>
