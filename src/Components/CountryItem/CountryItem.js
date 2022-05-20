@@ -1,96 +1,106 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useItem } from "../../Hooks/useItem";
-import './CountryItem.css'
-import CountryBorders from './CountryBorders'
+import "./CountryItem.css";
+import CountryBorders from "./CountryBorders";
+import Loaders from "../../Loader/Loaders";
 
+const CountryItem = ({ changeBorderCountry }) => {
+  const { country, loading } = useItem();
+  const value = Object.values(country);
 
-const CountryItem = ({changeBorderCountry}) => {
-      const {country, loading} = useItem()
-      const value = (Object.values(country))
-
-
-
-
-  
+let name = value[0]
+console.log(country)
+console.log(country.name)
   return (
-     <>
-      <section className="item">
-        <section className="asdds">
+    <>
+      {loading && <Loaders />}
 
-        <section className=" container_img">
-          <img className=" item_img" src={value[22]} alt={value[0]} />
-        </section>
-
-        <div>
-          <div className="asd">
-            <section className="section_item_one">
-              <h1 className=" item_h1">{value[0]}</h1>
-
-              <p>
-                Native name: <span>{value[0]}</span>
-              </p>
-              <p>
-                Populaation: <span>{value[9]}</span>
-              </p>
-              <p>
-                Region: <span>{value[7]}</span>
-              </p>
-              <p>
-                SubRegion: <span>{value[8]}</span>
-              </p>
-              <p>
-                Capital: <span>{value[5]}</span>
-              </p>
+      {!loading && (
+        <section className="item">
+          <section className="asdds">
+            <section className=" container_img">
+              <img className=" item_img" src={country.flag} alt={country.name} />
             </section>
 
-            <section className="section_item_two">
-              {value[0] ? (
-                <p>
-                  Top level: <span>{value[0]}</span>
-                </p>
-              ) : (
-                <span>
-                  <b>Dont' Have</b>
-                </span>
-              )}
-              {value[0] ? (
-                <p>
-                  Currencias: <span>{value[19][0].name}</span>
-                </p>
-              ) : (
-                <span>
-                  <b>Don't Have</b>
-                </span>
-              )}
-              {value[0] ? (
-                <p>
-                  Languages: <span>{value[20][0].name}</span>
-                </p>
-              ) : (
-                <span>
-                  {" "}
-                  <b> Donn't have. </b>
-                </span>
-              )}
-            </section>
-          </div>
-          <section>
-            {value[15] ? (
-              <p className="border">
-                Borders: {value[15].map((el) => ( <CountryBorders key={el} el={el} changeBorderCountry={changeBorderCountry} />
-                ))}
-              </p>
-            ) : (
-              <p className="dont_borders"> <b>Don't have borders.</b>  </p>
-            )}
-          
+            <div>
+              <div className="asd">
+                <section className="section_item_one">
+                  <h1 className=" item_h1">{country.name}</h1>
+
+                  {
+                    <p>
+                      Native name: <span>{country.name}</span>
+                    </p>
+                  }
+                  <p>
+                    Populaation: <span>{country.nativeName}</span>
+                  </p>
+                  <p>
+                    Region: <span>{country.region}</span>
+                  </p>
+                  <p>
+                    SubRegion: <span>{country.subregion}</span>
+                  </p>
+                  <p>
+                    Capital: <span>{country.capital}</span>
+                  </p>
+                </section>
+
+                <section className="section_item_two">
+                  {country.topLevelDomain ? (
+                    <p>
+                      Top level: <span>{country.topLevelDomain[0]}</span>
+                    </p>
+                  ) : (
+                    <span>
+                      <b>Dont' Have</b>
+                    </span>
+                  )}
+                  {country.currencies ? (
+                    <p>
+                      Currencias: <span>{country.currencies[0].name}</span>
+                    </p>
+                  ) : (
+                    <span>
+                      <b>Don't Have</b>
+                    </span>
+                  )}
+                  {country.languages ? (
+                    <p>
+                      Languages: <span>{country.languages[0].name}</span>
+                    </p>
+                  ) : (
+                    <span>
+                      <b> Donn't have. </b>
+                    </span>
+                  )}
+                </section>
+              </div>
+              <section>
+
+                {country.borders ? (
+                  <p className="border">
+                    Borders:{" "}
+                    {country.borders.map((el) => (
+                      <CountryBorders
+                        key={el}
+                        el={el}
+                        changeBorderCountry={changeBorderCountry}
+                      />
+                    ))}
+                  </p>
+                ) : (
+                  <p className="dont_borders">
+                    {" "}
+                    <b>Don't have borders.</b>{" "}
+                  </p>
+                )}
+              </section>
+            </div>
           </section>
-        </div>
         </section>
-      </section>
-      
-        
-     </>
+      )}
+    </>
   );
 };
 
