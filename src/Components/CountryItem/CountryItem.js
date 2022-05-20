@@ -1,29 +1,93 @@
 import React from "react";
 import { useItem } from "../../Hooks/useItem";
-import CountryItemRender from './CountryItemRender'
+import './CountryItem.css'
+import CountryBorders from './CountryBorders'
 
-const CountryItem = () => {
+
+const CountryItem = ({changeBorderCountry}) => {
       const {country, loading} = useItem()
+      const value = (Object.values(country))
 
-      console.log(country)
+
+
+
   
   return (
      <>
-     {country.map(el =>
-         <CountryItemRender
-          key={el.name}
-          img={el.flag}
-          name ={el.name}
-          capital={el.capital}
-          population={el.population}
-          languages={el.languages[0].name}
-          region={el.region}
-          subregion={el.subregion}
-          borders={el.borders}
-          currencies={el.currencies[0].name}
-          topLevelDomain={el.topLevelDomain[0]}
-         />
-      )}
+      <section className="item">
+        <section className="asdds">
+
+        <section className=" container_img">
+          <img className=" item_img" src={value[22]} alt={value[0]} />
+        </section>
+
+        <div>
+          <div className="asd">
+            <section className="section_item_one">
+              <h1 className=" item_h1">{value[0]}</h1>
+
+              <p>
+                Native name: <span>{value[0]}</span>
+              </p>
+              <p>
+                Populaation: <span>{value[9]}</span>
+              </p>
+              <p>
+                Region: <span>{value[7]}</span>
+              </p>
+              <p>
+                SubRegion: <span>{value[8]}</span>
+              </p>
+              <p>
+                Capital: <span>{value[5]}</span>
+              </p>
+            </section>
+
+            <section className="section_item_two">
+              {value[0] ? (
+                <p>
+                  Top level: <span>{value[0]}</span>
+                </p>
+              ) : (
+                <span>
+                  <b>Dont' Have</b>
+                </span>
+              )}
+              {value[0] ? (
+                <p>
+                  Currencias: <span>{value[19][0].name}</span>
+                </p>
+              ) : (
+                <span>
+                  <b>Don't Have</b>
+                </span>
+              )}
+              {value[0] ? (
+                <p>
+                  Languages: <span>{value[20][0].name}</span>
+                </p>
+              ) : (
+                <span>
+                  {" "}
+                  <b> Donn't have. </b>
+                </span>
+              )}
+            </section>
+          </div>
+          <section>
+            {value[15] ? (
+              <p className="border">
+                Borders: {value[15].map((el) => ( <CountryBorders key={el} el={el} changeBorderCountry={changeBorderCountry} />
+                ))}
+              </p>
+            ) : (
+              <p className="dont_borders"> <b>Don't have borders.</b>  </p>
+            )}
+          
+          </section>
+        </div>
+        </section>
+      </section>
       
         
      </>

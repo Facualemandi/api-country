@@ -6,11 +6,13 @@ export const useItem = () => {
   const [country, setCountry] = useState([]);
   const [loading, setLoading] = useState(false);
 
-    const {name} = useParams()
+    const {code} = useParams()
+
+
 
     useEffect(() => {
       const isFetch = async () => {
-        let urlApi = `https://restcountries.com/v2/name/${name}`;
+        let urlApi = `https://restcountries.com/v2/alpha/${code}`;
         setLoading(true);
   
         const [isCount] = await Promise.all([helpHttp().get(urlApi)]);
@@ -20,11 +22,10 @@ export const useItem = () => {
         setLoading(false);
       };
       isFetch();
-    }, [name]);
+    }, [code]);
 
   return {
     country,
     loading,
-    name,
   };
 };
