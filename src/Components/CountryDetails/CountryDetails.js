@@ -6,7 +6,7 @@ const CountryDetails = ({  name, img, capital, population, region, code }) => {
   return (
     <>
     <NavLink to={`/country/${code}`} className='nav_link_decoration'>
-     <main className="main">
+     <section className="main">
            <section className="main_section1">
                <img alt={name} src={img} className='img'/>
            </section>
@@ -17,7 +17,7 @@ const CountryDetails = ({  name, img, capital, population, region, code }) => {
               <p> Capital: <b>{capital}</b> </p>
               <p> Region: <b>{region}</b> </p>
            </section>
-     </main>
+     </section>
     </NavLink>
     </>
   );

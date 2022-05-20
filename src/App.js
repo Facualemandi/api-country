@@ -5,7 +5,6 @@ import CountryListRender from "./Components/CountryList/CountryListRender";
 function App() {
 
   let nav = useNavigate()
-
   const changeBorderCountry = (el) => {
         nav(`country/${el}`)
   };
@@ -14,6 +13,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<CountryListRender />} />
+
         <Route
           path="/country/:code"
           element={<CountryItem changeBorderCountry={changeBorderCountry} />}

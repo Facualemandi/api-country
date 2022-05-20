@@ -1,9 +1,8 @@
 .seaction_input {
   width: auto;
-  margin: auto;
-  margin-top: 5vh;
+  padding-top: 5vh;
   display: flex;
-  justify-content: center;
+  padding-left: 25px;
 }
 
 .seaction_input input {
@@ -11,4 +10,14 @@
   height: 40px;
   border: none;
   border: 1px solid rgb(202, 202, 202);
+}
+
+.input_darkmode{
+  background-color: #14232d;
+}
+
+@media (min-width:600px){
+  .input_darkmode{
+    background-color: #14232d;
+  }
 }
