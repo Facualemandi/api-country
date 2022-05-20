@@ -1,11 +1,17 @@
 import React from "react";
-import '../Loader/Loaders.css'
+import "../Loader/Loaders.css";
 
 const Loaders = () => {
   return (
-    <div className="lds-ripple">
+    <div className="lds-roller">
       <div></div>
-      <div ></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
   );
 };
