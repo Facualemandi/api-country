@@ -4,6 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     margin-top: 3vh;
     margin-bottom: 3vh;
 
@@ -21,7 +22,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .icon_return{
